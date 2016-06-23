@@ -16,16 +16,16 @@ import javax.validation.constraints.Min;
 public class Food {
 
     @Id @GeneratedValue
-    private long id;
+    private Long id;
     @Length(min = 2)
     private String name;
     @Min(value = 0)
-    private double quantity;
+    private Double quantity;
     @Min(value = 0)
-    private int price;
+    private Integer price;
 
 
-    public Food(String name, double quantity, int price) {
+    public Food(String name, Double quantity, int price) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -36,7 +36,7 @@ public class Food {
     }
 
     @JsonProperty
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -46,12 +46,28 @@ public class Food {
     }
 
     @JsonProperty
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
     @JsonProperty
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setQuantity(Double quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
