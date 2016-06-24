@@ -1,4 +1,4 @@
-package com.example.helloworld.api;
+package com.example.food.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
@@ -17,10 +17,13 @@ public class Food {
 
     @Id @GeneratedValue
     private Long id;
+
     @Length(min = 2)
     private String name;
+
     @Min(value = 0)
     private Double quantity;
+
     @Min(value = 0)
     private Integer price;
 

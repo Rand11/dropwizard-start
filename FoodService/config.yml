@@ -1,15 +1,12 @@
-template: Hello, %s!
-defaultName: Stranger
-
 database:
   # the name of your JDBC driver
   driverClass: org.postgresql.Driver
 
   # the username
-  user: adrianz
+  user: ${DWDEMO_USER}
 
   # the password
-  password:
+  password: ${DWDEMO_PASSWORD}
 
   # the JDBC URL
   url: jdbc:postgresql://localhost/dropwizard-started
@@ -34,17 +31,17 @@ database:
   # whether or not idle connections should be validated
   checkConnectionWhileIdle: false
 
-logging:
-  level: INFO
-  loggers:
-    "io.dropwizard": INFO
-    "org.hibernate.SQL":
-      level: DEBUG
-      additive: false
-      appenders:
-        - type: file
-          currentLogFilename: /var/log/dropwizard/myapplication-sql.log
-          archivedLogFilenamePattern: /var/log/dropwizard/myapplication-sql-%d.log.gz
-          archivedFileCount: 5
-  appenders:
-    - type: console
+#logging:
+#  level: INFO
+#  loggers:
+#    "io.dropwizard": INFO
+#    "org.hibernate.SQL":
+#      level: DEBUG
+#      additive: false
+#      appenders:
+#        - type: file
+#          currentLogFilename: /var/log/dropwizard/myapplication-sql.log
+#          archivedLogFilenamePattern: /var/log/dropwizard/myapplication-sql-%d.log.gz
+#          archivedFileCount: 5
+#  appenders:
+#    - type: console

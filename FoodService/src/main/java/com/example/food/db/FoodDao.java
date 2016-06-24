@@ -1,11 +1,9 @@
-package com.example.helloworld.db;
+package com.example.food.db;
 
-import com.example.helloworld.api.Food;
+import com.example.food.api.Food;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-
-import java.util.List;
 
 /**
  * Created by adrianz on 21/06/16.
@@ -28,11 +26,6 @@ public class FoodDao extends AbstractDAO<Food> {
         return persist(food).getId();
     }
 
-    public List<Food> findAll() {
-        return list(namedQuery("com.example.helloworld.core.Food.findAll"));
-    }
-
-    //        return (Long) currentSession().createQuery("select count(*) from PersistentEntity where ...").uniqueResult() > 0;
     public Boolean exists(long id) {
         Query query = currentSession().createQuery("select 1 from Food f where f.id=:id");
         query.setLong("id", id);
