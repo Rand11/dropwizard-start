@@ -1,7 +1,11 @@
 # Microservices Demo
 
-
 ## Food Service
+### Supported methods
+* GET /food?id={id}
+* POST /food
+* DELETE /food/{id} 
+* PUT     /food/{id}
 
 ## Cart Service
 
